@@ -1,0 +1,17 @@
+server:
+  port: 8080
+logging:
+  level:
+    org.jline: OFF
+    tech.docaposte.farkle: DEBUG
+spring:
+  application:
+    name: farkle
+  main:
+    banner-mode: console
+
+  shell:
+    interactive:
+      enabled: true
+    script:
+      enabled: true
