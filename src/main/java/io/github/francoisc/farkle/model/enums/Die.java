@@ -3,7 +3,7 @@ package io.github.francoisc.farkle.model.enums;
 import lombok.Getter;
 
 @Getter
-public enum Dice {
+public enum Die {
 
     ONE(1, 100, 1000),
     TWO(2),
@@ -16,13 +16,13 @@ public enum Dice {
     private final int score;
     private final int tripleScore;
 
-    Dice(int name, int score, int tripleScore) {
+    Die(int name, int score, int tripleScore) {
         this.name = name;
         this.score = score;
         this.tripleScore = tripleScore;
     }
 
-    Dice(int name) {
+    Die(int name) {
         this.name = name;
         this.score = 0;
         this.tripleScore = name * 100;
