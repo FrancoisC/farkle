@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>tech.docaposte</groupId>
+    <groupId>io.github.francoisc</groupId>
     <artifactId>farkle</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>farkle</name>

@@ -1,8 +1,6 @@
 # Farkle
 ## Description
-Implémentation du jeu de dés [Farkle](https://fr.wikipedia.org/wiki/Farkle) 
-
-![Static Badge](https://img.shields.io/badge/Statut-En%20cours%20de%20d%C3%A9veloppement-orange)
+Implémentation du jeu de dés [Farkle](https://fr.wikipedia.org/wiki/Farkle)
 
 ## Aperçu
 TODO
