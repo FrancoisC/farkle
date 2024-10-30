@@ -7,7 +7,7 @@ import org.springframework.shell.standard.ShellOption;
 @ShellComponent
 public class GameCommand {
 
-    private static final String INIT_GAME_MESSAGE = "Welcome to Farkle, %s";
+    public static final String INIT_GAME_MESSAGE = "Welcome to Farkle, %s";
     private static final String INIT_GAME_METHOD_KEY = "init";
     private static final String INIT_GAME_METHOD_VALUE = "Initialisation d'une nouvelle partie";
 
