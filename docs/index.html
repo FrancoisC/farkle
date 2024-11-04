@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Farkle</title>
+</head>
+<body>
+<h1>Farkle</h1>
+<span>WIP</span>
+<h2>Sequence diagrams</h2>
+<details>
+    <summary>Sequence 1 : playing a turn as a human player</summary>
+    <main>
+        <img loading="lazy" src="diagrams/sequence_playing_a_turn_human.drawio.png"
+             alt="Sequence 1 : playing a turn as a human player"/>
+    </main>
+</details>
+<br>
+<hr>
+<h2>Class diagram</h2>
+<details>
+    <summary>Version 1</summary>
+    <main>
+        <img loading="lazy" src="diagrams/farkle.drawio.png"
+             alt="Version 1"/>
+    </main>
+</details>
+</body>
+</html>
+
+<style>
+    details {
+        overflow: hidden;
+        margin-top: 0.125em;
+        border: 1px solid #dddddd;
+        background: #ffffff;
+        color: #333333;
+        border-radius: 3px;
+    }
+
+    details summary {
+        display: block;
+        cursor: pointer;
+        padding: .5em .5em .5em .7em;
+        background: #ededed;
+        color: #2b2b2b;
+        border-radius: 3px 3px 0 0;
+    }
+
+    details:not([open]) summary:hover,
+    details:not([open]) summary:focus {
+        background: #f6f6f6;
+        color: #454545;
+    }
+
+    details[open] summary {
+        border: 1px solid #003eff;
+        background: #007fff;
+        color: #ffffff;
+    }
+
+    details main {
+        padding: 1em 2.2em;
+    }
+</style>

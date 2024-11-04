@@ -20,5 +20,5 @@ TODO
 | 3.1     | 2025        | Entrainement de 3 modèles de joueurs robots (facile, normal, difficile) |
 
 ## Conception
-![uml](doc/farkle.drawio.png)
+![uml](docs/diagrams/farkle.drawio.png)
 
