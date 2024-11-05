@@ -1,4 +1,4 @@
-name: Java CI with Maven & Github pages deployment
+name: Java CI  & GH pages deploy
 
 on:
   push:

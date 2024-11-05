@@ -1,6 +1,8 @@
 # Farkle
+![status badge](https://github.com/FrancoisC/farkle/actions/workflows/main.yml/badge.svg?event=push&branch=develop)
 ## Description
 Implémentation du jeu de dés [Farkle](https://fr.wikipedia.org/wiki/Farkle)
+
 
 ## Aperçu
 TODO
@@ -20,5 +22,5 @@ TODO
 | 3.1     | 2025        | Entrainement de 3 modèles de joueurs robots (facile, normal, difficile) |
 
 ## Conception
-![uml](docs/diagrams/farkle.drawio.png)
+[See on Github pages](https://francoisc.github.io/farkle/)
 
