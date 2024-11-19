@@ -1,7 +1,7 @@
 package io.github.francoisc.farkle.model.players;
 
 import lombok.*;
-import io.github.francoisc.farkle.model.enums.Dice;
+import io.github.francoisc.farkle.model.enums.Die;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,34 +13,34 @@ import java.util.random.RandomGenerator;
 public class HumanPlayer implements Player {
     private int bankScore;
     private int turnScore;
-    private int remainingDices;
-    private List<Dice> dices;
+    private int remainingDice;
+    private List<Die> dice;
 
-    private HumanPlayer(int bankScore, int turnScore, int remainingDices, List<Dice> dices) {
+    private HumanPlayer(int bankScore, int turnScore, int remainingDice, List<Die> dice) {
         this.bankScore = bankScore;
         this.turnScore = turnScore;
-        this.remainingDices = remainingDices;
-        this.dices = dices;
+        this.remainingDice = remainingDice;
+        this.dice = dice;
     }
 
     public static HumanPlayer initDefaultPlayer() {
         var player = new HumanPlayer(0, 0, 6, null);
-        player.resetDices();
+        player.resetDice();
         return player;
     }
 
     @Override
-    public void resetDices() {
-        this.dices = new ArrayList<>(remainingDices);
+    public void resetDice() {
+        this.dice = new ArrayList<>(remainingDice);
     }
 
     @Override
-    public void removeDicesWithIndex(List<Integer> indexes) {
+    public void removeDiceWithIndex(List<Integer> indexes) {
         for (int index : indexes) {
-            dices.remove(index);
+            dice.remove(index);
         }
-        dices.removeIf(Objects::isNull);
-        remainingDices = dices.size();
+        dice.removeIf(Objects::isNull);
+        remainingDice = dice.size();
     }
 
     @Override
@@ -49,29 +49,29 @@ public class HumanPlayer implements Player {
     }
 
     @Override
-    public void addToTurnScore(int dicesScore) {
-        turnScore += dicesScore;
+    public void addToTurnScore(int diceScore) {
+        turnScore += diceScore;
     }
 
-    public Dice rollDice() {
-        int randomDice = RandomGenerator.getDefault().nextInt(6) + 1;
-        return Arrays.stream(Dice.values()).filter(dice -> dice.getName() == randomDice).findFirst().orElseThrow();
+    public Die rollDie() {
+        int randomDieNumber = RandomGenerator.getDefault().nextInt(6) + 1;
+        return Arrays.stream(Die.values()).filter(die -> die.getName() == randomDieNumber).findFirst().orElseThrow();
     }
 
-    public void performNewDiceRoll() {
-        resetDices();
-        for (int i = 0; i < getRemainingDices(); i++) {
-            dices.add(rollDice());
+    public void rollDice() {
+        resetDice();
+        for (int i = 0; i < getRemainingDice(); i++) {
+            dice.add(rollDie());
         }
     }
 
-    public void computeSelectedDicesScore(List<Integer> dicesIndex) {
-        int dicesScore = getDices().stream()
-                .reduce(0, (subtotal, dice) -> subtotal + dice.getScore(), Integer::sum);
-        if (dicesScore <= 0) {
-            throw new RuntimeException("Le score 'dicesScore' est nul ou négatif");
+    public void computeSelectedDiceScore(List<Integer> diceIndex) {
+        int diceScore = getDice().stream()
+                .reduce(0, (subtotal, die) -> subtotal + die.getScore(), Integer::sum);
+        if (diceScore <= 0) {
+            throw new RuntimeException("Le score 'diceScore' est nul ou négatif");
         }
-        addToTurnScore(dicesScore);
-        removeDicesWithIndex(dicesIndex);
+        addToTurnScore(diceScore);
+        removeDiceWithIndex(diceIndex);
     }
 }
